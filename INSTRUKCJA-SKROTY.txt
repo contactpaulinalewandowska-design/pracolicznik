@@ -1,0 +1,17 @@
+PRACOLICZNIK — ALARMY NA ZABLOKOWANYM IPHONIE
+
+Wersja v4 dodaje przycisk „Ustaw alarmy iPhone’a”. Przekazuje wybraną godzinę do skrótu iOS o DOKŁADNEJ nazwie „Pracolicznik Alarmy”. Sam przycisk nie tworzy alarmów bez skonfigurowanego skrótu.
+
+KONFIGURACJA SKRÓTU (jednorazowo, na iPhonie)
+1. Otwórz aplikację Skróty → + → nowy skrót. Nazwij dokładnie: Pracolicznik Alarmy.
+2. Ustaw przyjmowanie danych wejściowych skrótu jako tekstu (godzina HH:mm), przekazanych przez adres shortcuts://. W razie potrzeby użyj zmiennej „Dane wejściowe skrótu” (Shortcut Input).
+3. Z wejścia HH:mm utwórz datę i godzinę na DZISIAJ (np. używając akcji „Data” i „Formatuj datę” / „Pobierz daty z danych wejściowych” w zależności od wersji iOS). Upewnij się, że przy 16:30 powstaje dzisiejsza godzina 16:30.
+4. Utwórz pierwszą godzinę: odejmij 15 minut od tej daty (akcja „Dostosuj datę” / Adjust Date).
+5. Dodaj akcję „Utwórz alarm” (Create Alarm) dla czasu sprzed 15 minut, z etykietą „Pracolicznik — przygotuj się do końca pracy”.
+6. Dodaj drugą akcję „Utwórz alarm” dla godziny końca, z etykietą „Pracolicznik — zakończ pracę”.
+7. Zapisz skrót. Najpierw przetestuj z godziną kilka minut w przyszłości i sprawdź, czy Zegar rzeczywiście pokazuje DWA alarmy.
+8. W Pracoliczniku wybierz godzinę i naciśnij „Ustaw alarmy iPhone’a”. Potwierdź uruchomienie skrótu, jeśli iOS o to poprosi.
+
+UWAGA: Nazwy i dostępność działań mogą się nieznacznie różnić między wersjami iOS. Skróty nie muszą automatycznie usuwać poprzednich alarmów; usuń lub wyłącz stare alarmy w Zegarze, aby uniknąć niechcianych powtórzeń. Systemowe alarmy mogą mieć ustawioną powtarzalność — wybierz jednorazowe, jeżeli dostępne.
+
+DANE: Aktualizacja zachowuje istniejący klucz localStorage dla sesji i notatek. Przed wdrożeniem wykonaj kopię JSON. Nie wysyłaj pliku INSTRUKCJA-SKROTY.txt do repozytorium, jeśli nie chcesz publikować instrukcji.
